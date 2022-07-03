@@ -1,0 +1,36 @@
+<html>
+
+<body>
+	<input type="text" name="st">
+	<button onclick="calc()">click</button>
+	<script type="text/javascript">
+
+		function calc() {
+			var str = document.getElementById("st");
+			if (isNaN(str)) {
+				str = str.toUpperCase();
+				console.log(str);
+				for (var i = 0; i < str.length; i++) {
+					var chr = str.charAt(i);
+					if (chr == 'A' || chr == 'E' || chr == 'I' || chr == 'O' || chr == 'U')
+						break;
+				}
+				if (i < str.length)
+					alert("The position of the left most vowel is " + (i + 1));
+				else
+					alert("No vowel found in the entered string");
+			}
+			else {
+				var num, rev = 0, remainder;
+				var str2 = "";
+				num = parseInt(str);
+				for (rev = str.length; rev >= 0; rev++)
+					str2 += str[rev];
+
+				alert("Reverse of " + str + " is " + str2);
+			}
+		}
+	</script>
+</body>
+
+</html>
